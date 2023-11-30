@@ -8,7 +8,7 @@ export default {
           defer: true,
         },
       ],
-      ["script", { src: "js/addInKeep.js", type: "module", defer: true }],
+      ["script", { src: "js/addInkeep.js", type: "module", defer: true }],
     ],
   };
   

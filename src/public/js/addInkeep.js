@@ -12,16 +12,15 @@ const inkeepWidget = Inkeep().embed({
   componentType: "ChatButton", // required, options: 'ChatButton', 'EmbeddedChat', 'SearchBar', 'CustomTrigger'
   targetElement: document.getElementById("inkeep"), // required, HTML element to render the widget into
   properties: {
-    chatButtonType: "ICON_TEXT", // <-- switch between "Pill" and hot-key rectangular variations
+    chatButtonType: "ICON_TEXT", // <-- the "Pill" variation
     baseSettings: {
       integrationId: "integrationId", // required
       apiKey: "apiKey", // required
       organizationId: "organizationId", // required
-      organizationDisplayName: "VitePress", // your brand display name
-      primaryBrandColor: "#000000", // your brand color
+      primaryBrandColor: "#000000", // your brand color, color scheme is derived from this
       theme: {
         primaryColors: {
-          textColorOnPrimary: "#ffffff",
+          textColorOnPrimary: "#ffffff", // the text color used when the background is the primary color
         },
         colorMode: {
           forcedColorMode: isCurrentlyDark ? "dark" : "light",
@@ -30,28 +29,28 @@ const inkeepWidget = Inkeep().embed({
       //... optional base settings
     },
     aiChatSettings: {
-      chatSubjectName: "VitePress", // <-- name of the bot
-      botAvatarSrcUrl: "/img/vitepress-logo.svg", // insert your own bot avatar, in public folder or hosted elsewhere.
+      chatSubjectName: "VitePress", // <-- name of the subject of the chat
+      botAvatarSrcUrl: "/img/vitepress-logo.svg", // insert your own bot avatar, in public folder or an absolutely url for externally hosted image
       quickQuestions: [
-        "Can I use rate limiting to avoid filling up the mailbox?",
-        "How to logically isolate multiple product lines?",
-        "How do I bi-directionally bridge two brokers?",
+        "Example question 1?",
+        "Example question 2?",
+        "Example question 3?",
       ],
       getHelpCallToActions: [
         {
-          icon: { builtIn: "IoChatbubblesOutline" },
-          name: "Forum",
-          url: "https://www.your.io/forum",
+          icon: { builtIn: 'FaSlack' },
+          name: 'Slack',
+          url: 'https://myorg.slack.com/C010101010',
         },
         {
-          icon: { builtIn: "FaDiscord" },
-          name: "Discord",
-          url: "https://discord.com",
+          icon: { builtIn: 'FaDiscord' },
+          name: 'Discord',
+          url: 'https://discord.com/invite/invidecode123',
         },
         {
-          icon: { builtIn: "FaSlack" },
-          name: "Slack",
-          url: "https://your.slack.com",
+          icon: { builtIn: 'FaGithub' },
+          name: 'GitHub',
+          url: 'https://github.com/myorg/myrepo/discussions',
         },
       ],
     },
@@ -61,8 +60,7 @@ const inkeepWidget = Inkeep().embed({
     modalSettings: {
       // optional
       // openShortcutKey: "L", // <- if you want to chat the trigger button
-      areOpenHotKeysDisabled: true, // <- turn of hot key (default to 'k')
-      isModeSwitchingEnabled: false, // <- turn off the search mode
+      areOpenHotKeysDisabled: true, // <- turn off hot key (default to 'k')
     },
   },
 });
